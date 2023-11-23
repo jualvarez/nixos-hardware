@@ -47,6 +47,7 @@
 
   # Alder Lake CPUs benefit from kernel 5.18 for ThreadDirector
   # https://www.tomshardware.com/news/intel-thread-director-coming-to-linux-5-18
-  boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.18") (lib.mkDefault pkgs.linuxPackages_latest);
+  # This line is generating issues of duplication of options in ../common/intel
+  # boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.18") (lib.mkDefault pkgs.linuxPackages_latest);
 
 }
